@@ -1,8 +1,12 @@
+from faker import Faker
+fake = Faker()
+
+
 class Airfare:
-    def __init__(self, name: str, airfare_id, destino):
-        self.__name = name
-        self.__airfare_id = airfare_id
-        self.__destino = destino
+    def __init__(self):
+        self.__name = fake.name()
+        self.__airfare_id = fake.uuid4()[:4]
+        self.__destino = fake.country()
 
     @property
     def _name(self):
@@ -16,10 +20,6 @@ class Airfare:
     def _airfare_id(self):
         return self.__airfare_id
 
-    @_airfare_id.setter
-    def _airfare_id(self, value):
-        self.__airfare_id = value
-
     @property
     def _destino(self):
         return self.__destino
@@ -28,11 +28,11 @@ class Airfare:
     def _destino(self, value):
         self.__destino = value
 
-    
     def create():
-        pass
+        new_user = Airfare()
+        return (print(new_user))
 
-    def read():
+    def read(airfare_id):
         pass
 
     def update():
@@ -40,6 +40,11 @@ class Airfare:
 
     def delete():
         pass
-    
+
     def fly():
         pass
+
+
+new_airfare = Airfare()
+print(
+    f'Nova passagem gerada para {new_airfare._name}, com código {new_airfare._airfare_id} com destino a {new_airfare._destino}')
