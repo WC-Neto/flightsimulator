@@ -28,20 +28,20 @@ class Airfare:
     def _destino(self, value):
         self.__destino = value
 
-    def create():
+    def create(self):
         new_user = Airfare()
         return (print(new_user))
 
     def read(airfare_id):
         pass
 
-    def update():
+    def update(self):
         pass
 
-    def delete():
+    def delete(self):
         pass
 
-    def fly():
+    def fly(self):
         pass
 
 
