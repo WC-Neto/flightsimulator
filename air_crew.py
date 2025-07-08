@@ -1,53 +1,35 @@
 from person import Person
+from airplane_crew_interface import IAirplaneCrew
 
-
-class Pilot(Person):
-    def __init__(self, name: str, person_id: str, age: int, func: str):
+class Pilot(Person, IAirplaneCrew):
+    def __init__(self, name: str, person_id: str, age: int, func: str = "Piloto"):
         super().__init__(name, person_id, age)
         self.__func = func
 
     @property
-    def _func(self):
+    def func(self):
         return self.__func
 
-    @_func.setter
-    def _func(self, value):
-        self.__func = value
+    def check_credentials(self) -> bool:
+        print(f"Verificando licença de voo para o piloto {self.name}...")
+        return True
 
-    def create(self):
-        pass
-
-    def read(self):
-        pass
-
-    def update(self):
-        pass
-
-    def delete(self):
-        pass
+    def report_for_duty(self):
+        print(f"Piloto {self.name} se apresentando para o voo.")
 
 
-class AirAttendants(Person):
-    def __init__(self, name: str, person_id: str, age: int, func: str):
+class AirAttendant(Person, IAirplaneCrew):
+    def __init__(self, name: str, person_id: str, age: int, func: str = "Comissário(a)"):
         super().__init__(name, person_id, age)
         self.__func = func
 
     @property
-    def _func(self):
+    def func(self):
         return self.__func
 
-    @_func.setter
-    def _func(self, value):
-        self.__func = value
+    def check_credentials(self) -> bool:
+        print(f"Verificando certificação de segurança para o comissário(a) {self.name}...")
+        return True
 
-    def create(self):
-        pass
-
-    def read(self):
-        pass
-
-    def update(self):
-        pass
-
-    def delete(self):
-        pass
+    def report_for_duty(self):
+        print(f"Comissário(a) {self.name} se apresentando para o serviço.")
