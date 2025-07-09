@@ -18,15 +18,3 @@ class Airline:
     @_airline_id.setter
     def _airline_id(self, value):
         self.__airline_id = value
-
-    def create(self):
-        pass
-
-    def read(self):
-        pass
-
-    def update(self):
-        pass
-
-    def delete(self):
-        pass

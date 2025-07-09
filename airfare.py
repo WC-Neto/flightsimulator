@@ -28,23 +28,3 @@ class Airfare:
     def _destino(self, value):
         self.__destino = value
 
-    def create(self):
-        new_user = Airfare()
-        return (print(new_user))
-
-    def read(airfare_id):
-        pass
-
-    def update(self):
-        pass
-
-    def delete(self):
-        pass
-
-    def fly(self):
-        pass
-
-
-new_airfare = Airfare()
-print(
-    f'Nova passagem gerada para {new_airfare._name}, com código {new_airfare._airfare_id} com destino a {new_airfare._destino}')
